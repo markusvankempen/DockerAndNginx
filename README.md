@@ -13,7 +13,7 @@ Create a machine in qemu (installed by home-brew) with the following command: po
 Start the machine so it can be used, with the following command: podman machine start
 Symlink docker for podman ln -s podman docker  (in /usr/local/bin e.g. cd /usr/local/bin; ln -s podman docker), so it's a true drop in replacement. Alternatively you may want to alias docker to podman alias docker=podman
 Try running docker run hello-world to test or doing a docker pull <fully-qualified-image-name>
-You might also want to look at https://podman.io/getting-started/installation#macos & https://www.redhat.com/sysadmin/podman-mac-machine-architecture & https://www.redhat.com/sysadmin/replace-docker-podman-mac-revisited[External Sites]
+You might also want to look at https://podman.io/getting-started/installation#macos & https://www.redhat.com/sysadmin/podman-mac-machine-architecture & https://www.redhat.com/sysadmin/replace-docker-podman-mac-revisited
 
 
 ```bash
