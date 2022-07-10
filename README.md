@@ -15,6 +15,15 @@ Symlink docker for podman ln -s podman docker  (in /usr/local/bin e.g. cd /usr/l
 Try running docker run hello-world to test or doing a docker pull <fully-qualified-image-name>
 You might also want to look at https://podman.io/getting-started/installation#macos & https://www.redhat.com/sysadmin/podman-mac-machine-architecture & https://www.redhat.com/sysadmin/replace-docker-podman-mac-revisited
 
+Note: Because podman runs in rootless mode by default, certain functions such as the use of certain ports, will be restricted when you switch to podman until you either modify the settings in podman or modify your files. This is not recommended as it will lessening security, but you can change to defaulting to using the podman in root after installing and initializing it by entering: podman system connection default podman-machine-default-root. If this does not work, you likely are only connected to the default rootless machine and need to add it using the instructions found below in the instructions for Mac users who are upgrading podman. The recommended solution is to run rootless.
+
+View the connection list with podman system connection list
+If there are more than the two default machines:
+If there are machines other than podman-machine-default and podman-machine-default-root, remove them using podman system connection remove [name of machine you want to remove]
+If one of the two default machines are missing:
+Add one or both of the two default machines (podman-machine-default and podman-achine-default-root) using podman system connection add --identity [identity of the other machine] [whichever name is not in the list] [if you're adding root switch "core" to "root" and add "/user/1000" after "run", if you are adding default, do the opposite]
+  
+  
 
 ```bash
 # Build Image
