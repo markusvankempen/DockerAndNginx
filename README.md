@@ -27,10 +27,10 @@ Add one or both of the two default machines (podman-machine-default and podman-a
 
 ```bash
 # Build Image
-docker build -t bootstrap-nginx .
+docker build -t my-test-nginx .
 
 # Run container
-docker run -d -p 80:80 bootstrap-nginx 
+docker run -d -p 80:80 my-test-nginx 
 
 # Confirm container is running
 docker container ls
