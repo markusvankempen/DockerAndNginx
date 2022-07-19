@@ -36,7 +36,11 @@ docker run -d -p 80:80 my-test-nginx
 docker container ls
 ```
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Version 20220719
 =======
 # Version 20220720
 >>>>>>> fe5f476 (Version change)
+=======
+# Version 20220721
+>>>>>>> 2bb451c (TEST)
