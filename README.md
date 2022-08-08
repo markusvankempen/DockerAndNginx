@@ -26,21 +26,39 @@ Add one or both of the two default machines (podman-machine-default and podman-a
   
 
 ```bash
+# podman setup
+brew install podman
+podman machine init  
+podman system connection default podman-machine-default-root  ???
+podman machine set --rootful
+podman machine start
+ln -s podman docker
+
+# Remove images 
+docker rmi -f $(docker images -aq)
+
 # Build Image
-docker build -t my-test-nginx .
+docker build -t land-mvk-website:Version-1 .
 
 # Run container
-docker run -d -p 80:80 my-test-nginx 
+docker run -d -p 80:80 land-mvk-website:Version-1 
 
 # Confirm container is running
 docker container ls
+
+# login to docker.io
+docker login -u yourusename docker.io
+
+# list docker images
+docker images 
+
+# add a tag / extra tag with name
+docker tag  <Image>  yourusename/land-mvk-website:MVK-v1
+ 
+# push docker images to dockerio
+docker push yourusename/land-mvk-website:MVK-v1
+
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
-# Version 20220719
-=======
-# Version 20220720
->>>>>>> fe5f476 (Version change)
-=======
-# Version 20220721
->>>>>>> 2bb451c (TEST)
+
+# Version 20220804 Markus -mvk@ca.ibm.com
+
